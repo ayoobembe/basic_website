@@ -1,4 +1,30 @@
-	<div style='border: 3px dashed red'>
+ 
+<!-- 	<div style='border: 3px dashed red'>
 		My name is <%= @name %>
+		<img src='http://bit.ly/1eze8aE'/>
+	</div> -->
+
+<!-- 	<div style='border: 3px dashed red'>
+#		<% if @visitor %>
+			Hello, <%= @visitor %>!
+#		<% end %>
+#		<% if @name %>
+			My name is <%=@name %>
+#		<% end %>
+		<img src='http://bit.ly/1eze8aE'/>
+	</div> -->
+
+<!-- NOTE!!:How does form know where to submit too? .. Action attribute in form tag!! -->
+	<div style='border: 3px dashed red'>
+		<% if @visitor %>
+			Hello, <%= @visitor %>!
+		<% else %>
+			<form action="/hello">
+				My name is <%= @name %>.
+				What's your name?
+				<input type="text" name="name">
+				<input type="submit">
+			</form>
+		<%end%>
 		<img src='http://bit.ly/1eze8aE'/>
 	</div>
